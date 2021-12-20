@@ -1,0 +1,17 @@
+* {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    background: #333;
+}
+#adsplace {
+    max-width: 100%;
+    width: 1390px;
+    height: auto;
+    margin: 0 auto;
+}
+#adsplace canvas {
+    width: 100%;
+}
