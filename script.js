@@ -243,14 +243,14 @@ function onDownload () {
 function showAnimation (obj = PIXI.Container(),speed = 30,type = 'ease') {
 
     obj.alpha = 0.3;
-    if ((type == "bump")||(type == "down")) {
+    if ((type === "bump")||(type === "down")) {
         var startY = obj.y;
         obj.y -= 40; // down up 40px    
         var deltaY = 6;
         var bumpN = 1; 
         var delta = deltaY;
     }
-    if (type == "zoom") {
+    if (type === "zoom") {
         var scale = 0.3;
         obj.transform.scale.set(scale,scale);
     }
@@ -260,21 +260,21 @@ function showAnimation (obj = PIXI.Container(),speed = 30,type = 'ease') {
             obj.alpha += 0.1;
         }
 
-        if (type == "zoom") {
+        if (type === "zoom") {
             scale+=0.1;
             obj.transform.scale.set(scale,scale);
         }
-        if ((obj.alpha >= 1)&& (type == "ease") ) {
+        if ((obj.alpha >= 1)&& (type === "ease") ) {
             clearInterval(loopID);
             obj.alpha = 1;
         }
-        if ((obj.transform.scale.x >= 1)&& (type == "zoom") ) {
+        if ((obj.transform.scale.x >= 1)&& (type === "zoom") ) {
             clearInterval(loopID);
             obj.alpha = 1; 
             obj.transform.scale.set(1,1);
         }
 
-        if (type == "bump") {
+        if (type === "bump") {
             obj.y += delta;
             if (obj.y > startY) {
                 delta = -deltaY; 
@@ -292,7 +292,7 @@ function showAnimation (obj = PIXI.Container(),speed = 30,type = 'ease') {
             }
         }
 
-        if (type == "down") {
+        if (type === "down") {
             obj.y += delta;
             if (obj.y >= startY ) {
                 clearInterval(loopID);
@@ -531,10 +531,10 @@ async function startApp(placeDiv) {
             timer = 0;
         }
         // pause animate after half turn man
-        if (manSpriteNumber == 0 || manSpriteNumber == 4) {
+        if (manSpriteNumber === 0 || manSpriteNumber === 4) {
             speedFrame = 200 + 50*Math.random(1);
         }
-        if (manSpriteNumber == 1 || manSpriteNumber == 5) {
+        if (manSpriteNumber === 1 || manSpriteNumber === 5) {
             speedFrame = 10;
         }
         
